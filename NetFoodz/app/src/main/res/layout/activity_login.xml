@@ -8,17 +8,23 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Login">
-
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="54dp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cadastre_se"
         android:id="@+id/cadastrese"
-        android:layout_marginBottom="30dp"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/textView"
-        android:layout_toStartOf="@+id/textView"
-        android:onClick="ircadastrese"/>
+        android:onClick="ircadastrese"
+        android:layout_below="@+id/editText6"
+        android:layout_toRightOf="@+id/textView8"
+        android:layout_toEndOf="@+id/textView8" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -31,15 +37,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="69dp"
         android:textSize="40sp"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login_com_facebook"
-        android:id="@+id/loginfacebook"
-        android:layout_alignTop="@+id/cadastrese"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -87,5 +84,6 @@
         android:text="Entrar"
         android:id="@+id/button2"
         android:layout_below="@+id/editText6"
-        android:layout_centerHorizontal="true" />
+        android:layout_toLeftOf="@+id/textView"
+        android:layout_toStartOf="@+id/textView" />
 </RelativeLayout>
