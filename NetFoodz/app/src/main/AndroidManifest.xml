@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
         <activity
-            android:name=".TelaAnimacao"
+            android:name=".gui.TelaAnimacao"
             android:supportsRtl="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,13 +24,13 @@
                 "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:label="@string/app_name" />
-        <activity android:name=".Cadastro" />
-        <activity android:name=".Carrinho_de_compras" />
-        <activity android:name=".Listar_produtos" />
-        <activity android:name=".Login" />
-        <activity android:name=".QrCode" />
-        <activity android:name=".OfertasActivity"/>
-        <activity android:name=".Teste"></activity>
+        <activity android:name=".gui.Cadastro" />
+        <activity android:name=".gui.Carrinho_de_compras" />
+        <activity android:name=".gui.Listar_produtos" />
+        <activity android:name=".gui.Login" />
+        <activity android:name=".gui.QrCode" />
+        <activity android:name=".gui.OfertasActivity"/>
+        <activity android:name=".gui.Teste"></activity>
     </application>
 
 </manifest>
