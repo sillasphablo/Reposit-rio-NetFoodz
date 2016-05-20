@@ -35,73 +35,9 @@ public class Login extends AppCompatActivity {
         facebookSDKInitialize();
         setContentView(R.layout.activity_login);
         LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
-        loginButton.setReadPermissions("email","public_profile","user_friends");
+        loginButton.setReadPermissions("email", "public_profile", "user_friends");
         getLoginDetails(loginButton);
-
-        try {
-            userService = new UsuarioServices(getApplicationContext());
-            userService.ligaBanco(getApplicationContext());
-        } catch (SQLiteException e) {
-            Toast.makeText(Login.this, "Erro: " + e.getMessage(),
-                    Toast.LENGTH_LONG).show();
-        }
-
-        editLogin = (EditText) findViewById(R.id.login);
-        editSenha = (EditText) findViewById(R.id.senha);
-
-        // Botão para fazer login
-        entrar = (Button) findViewById(R.id.entrar);
-        entrar.setOnClickListener(new OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                String login = editLogin.getText().toString();
-                String senha = editSenha.getText().toString();
-
-                boolean valido = validaCampos(login, senha);
-
-                if (valido) {
-                    try {
-                        boolean correto = userService.verificauser(
-                                getApplicationContext(), login, senha);
-                        if (correto) {
-                            Intent NetFoodz = new
-                                    Intent(Login.this, Listar_produtos.class);
-                            Login.this.startActivity(NetFoodz);
-                            Login.this.finish();
-                        } else {
-                            Toast.makeText(Login.this,
-                                    "Login e/ou senha incorretos!",
-                                    Toast.LENGTH_LONG).show();
-                        }
-                    } catch (Exception e) {
-                        Toast.makeText(
-                                Login.this,
-                                "Erro: Impossivel cadastrar usuário! Este login pode já estar em uso.",
-                                Toast.LENGTH_LONG).show();
-                    }
-
-                } else {
-
-                    Toast.makeText(Login.this, "Erro de validação!",
-                            Toast.LENGTH_LONG).show();
-                }
-
-            }
-
-            // Método para validar campos
-            public boolean validaCampos(String login, String senha) {
-                boolean result = false;
-                if (login.equals("") || senha.equals("")) {
-                    result = false;
-                } else {
-                    result = true;
-                }
-                return result;
-            }
-        });}
-
-
+    }
     protected void facebookSDKInitialize() {
 
         FacebookSdk.sdkInitialize(getApplicationContext());

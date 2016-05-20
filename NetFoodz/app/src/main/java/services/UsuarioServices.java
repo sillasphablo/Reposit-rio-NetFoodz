@@ -1,7 +1,7 @@
 package services;
 
 import java.util.List;
-import dominio.Usuario;
+import dominio.Login;
 import persistencia.UsuarioDAO;
 import android.app.Activity;
 import android.content.Context;
@@ -9,7 +9,7 @@ import android.content.Context;
 public class UsuarioServices extends Activity{
 
     private static UsuarioDAO usuarioDAO;
-    private List<Usuario> lista;
+    private List<Login> lista;
     private static UsuarioServices instance;
 
     public UsuarioServices(Context context) {
@@ -38,7 +38,7 @@ public class UsuarioServices extends Activity{
     }
 
     public boolean verificauser(Context context, String login, String senha) {
-        Usuario user = new Usuario();
+        Login user = new Login();
         user.setLogin(login);
         user.setSenha(senha);
         boolean result = usuarioDAO.verificaUsuario(user);

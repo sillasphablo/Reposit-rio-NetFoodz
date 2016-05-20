@@ -1,6 +1,6 @@
 package dominio;
 
-public class Usuario {
+public class Login {
     private long id;
     private String login;
     private String senha;
