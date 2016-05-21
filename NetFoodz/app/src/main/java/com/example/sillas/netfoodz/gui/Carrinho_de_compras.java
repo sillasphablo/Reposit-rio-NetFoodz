@@ -1,7 +1,9 @@
-package com.example.sillas.netfoodz;
+package com.example.sillas.netfoodz.gui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.sillas.netfoodz.R;
 
 public class Carrinho_de_compras extends AppCompatActivity {
 

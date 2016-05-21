@@ -1,4 +1,4 @@
-package com.example.sillas.netfoodz;
+package com.example.sillas.netfoodz.gui;
 
 /**
  * Created by John on 05/05/2016.
