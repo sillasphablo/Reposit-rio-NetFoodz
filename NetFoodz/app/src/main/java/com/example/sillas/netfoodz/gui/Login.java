@@ -4,15 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import services.UsuarioServices;
-import android.database.sqlite.SQLiteException;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
+
 import com.example.sillas.netfoodz.R;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -24,10 +18,6 @@ import com.facebook.login.widget.LoginButton;
 
 public class Login extends AppCompatActivity {
     CallbackManager callbackManager;
-    private Button entrar;
-    private EditText editLogin;
-    private EditText editSenha;
-    private UsuarioServices userService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,35 +29,35 @@ public class Login extends AppCompatActivity {
         getLoginDetails(loginButton);
     }
     protected void facebookSDKInitialize() {
-
         FacebookSdk.sdkInitialize(getApplicationContext());
         callbackManager = CallbackManager.Factory.create();
     }
     protected void getLoginDetails(LoginButton login_button){
-
         // Callback registration
         login_button.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult login_result) {
                 Intent intent = new Intent(Login.this,Listar_produtos.class);
                 startActivity(intent);
-
             }
-
             @Override
             public void onCancel() {
-                // code for cancellation
+                Toast.makeText(Login.this, "Necessario Logar para Usar o APP",
+                        Toast.LENGTH_LONG).show();
             }
-
             @Override
             public void onError(FacebookException exception) {
-                //  code to handle error
+                Toast.makeText(Login.this, "Erro: " + exception.getMessage(),
+                        Toast.LENGTH_LONG).show();
             }
         });
     }
-
     public void ircadastrese (View v){
         Intent it = new Intent(Login.this, Cadastro.class);
+        startActivity(it);
+    }
+    public void irtelaproduto (View v){
+        Intent it = new Intent(Login.this, Listar_produtos.class);
         startActivity(it);
     }
     @Override
@@ -77,30 +67,14 @@ public class Login extends AppCompatActivity {
         Log.e("data",data.toString());
     }
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        // getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-
-        return super.onOptionsItemSelected(item);
-    }
-    @Override
     protected void onResume() {
         super.onResume();
-
         // Logs 'install' and 'app activate' App Events.
         AppEventsLogger.activateApp(this);
     }
     @Override
     protected void onPause() {
         super.onPause();
-
         // Logs 'app deactivate' App Event.
         AppEventsLogger.deactivateApp(this);
     }
