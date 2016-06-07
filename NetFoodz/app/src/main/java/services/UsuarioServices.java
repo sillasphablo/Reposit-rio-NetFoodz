@@ -1,10 +1,11 @@
-package services;
+package main.java.services;
 
-import java.util.List;
-import dominio.Usuario;
-import persistencia.UsuarioDAO;
 import android.app.Activity;
 import android.content.Context;
+
+import java.util.List;
+
+import main.java.dominio.Usuario;
 
 public class UsuarioServices extends Activity{
 

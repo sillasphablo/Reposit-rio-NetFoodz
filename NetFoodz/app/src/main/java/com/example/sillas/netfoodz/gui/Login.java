@@ -1,18 +1,18 @@
-package com.example.sillas.netfoodz.gui;
+package main.java.com.example.sillas.netfoodz.gui;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import services.UsuarioServices;
-import android.database.sqlite.SQLiteException;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import com.example.sillas.netfoodz.R;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -21,6 +21,8 @@ import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+
+import main.java.services.UsuarioServices;
 
 public class Login extends AppCompatActivity {
     CallbackManager callbackManager;

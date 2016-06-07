@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.example.sillas.netfoodz.R;
-import services.UsuarioServices;
+import main.java.services.UsuarioServices;
 
 public class Cadastro extends AppCompatActivity {
     private Button cadastrar;

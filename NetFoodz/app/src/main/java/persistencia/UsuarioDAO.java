@@ -1,6 +1,6 @@
 package persistencia;
 
-import dominio.Usuario;
+import main.java.dominio.Usuario;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;

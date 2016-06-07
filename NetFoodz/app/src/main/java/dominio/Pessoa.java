@@ -1,4 +1,4 @@
-package com.example.sillas.netfoodz.gui;
+package main.java.dominio;
 
 /**
  * Created by John on 05/05/2016.

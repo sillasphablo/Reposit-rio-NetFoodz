@@ -1,38 +1,37 @@
-package dominio;
+package main.java.dominio;
 
+/**
+ * Created by John on 05/05/2016.
+ */
 public class Usuario {
-    private long id;
+    private Pessoa pessoa;
     private String login;
     private String senha;
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
     public String getLogin() {
-        return login;
+        return this.login;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setLogin(String username) {
+        this.login = username;
     }
 
     public String getSenha() {
-        return senha;
+        return this.senha;
     }
 
     public void setSenha(String senha) {
         this.senha = senha;
     }
 
-    // Sera utilizado pelo ArrayAdapter para renderizar o model na ListView
-    @Override
-    public String toString() {
-        return login;
+    public Pessoa getPessoa() {
+        return this.pessoa;
     }
+
+    public void setPessoa(Pessoa pessoa) {
+        this.pessoa = pessoa;
+    }
+
+
 
 }
