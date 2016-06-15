@@ -15,6 +15,9 @@ import com.example.sillas.netfoodz.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import dominio.Produto;
+
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the

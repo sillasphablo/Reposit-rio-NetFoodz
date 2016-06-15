@@ -1,0 +1,5 @@
+rootProject.name = 'netfoodz'
+include 'common'
+include 'store'
+include 'rest'
+
